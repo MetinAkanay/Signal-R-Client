@@ -1,1 +1,18 @@
-﻿
+﻿<div class="connectionstate"></div>
+<button class="connect" value="Bağlan">Bağlan</button>
+
+<script>
+    $(document).ready(function () {
+        $(".connect").click(function () {
+            var connection = new signalR.HubConnectionBuilder().withUrl("https://localhost:7094").build();
+
+            connection.start().then(() => {
+                var state = connection.state; 
+                $(".connectionstate").html('<div class="alert alert-success" role="alert">Durum : ' + state + '</div>');
+            }).catch(err => {
+                var state = connection.state; 
+                $(".connectionstate").html('<div class="alert alert-danger" role="alert">Durum : ' + state + '</div>');
+            });
+        });
+    });
+</script>

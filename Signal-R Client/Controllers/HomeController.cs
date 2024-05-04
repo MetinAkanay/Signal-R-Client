@@ -15,7 +15,7 @@ namespace Signal_R_Client.Controllers
 
         public IActionResult Index()
         {
-            return View();
+            return View("WissenMessage");
         }
 
         public IActionResult Privacy()
