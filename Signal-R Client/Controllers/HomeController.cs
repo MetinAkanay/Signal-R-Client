@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.SignalR;
 using Signal_R_Client.Models;
 using System.Diagnostics;
 
@@ -17,7 +18,7 @@ namespace Signal_R_Client.Controllers
         {
             return View("WissenMessage");
         }
-
+        
         public IActionResult Privacy()
         {
             return View();
